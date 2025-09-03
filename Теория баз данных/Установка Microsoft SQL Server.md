@@ -1,0 +1,1 @@
+[Установка Microsoft SQL Server ](https://www.youtube.com/watch?v=dX5kmjaJNck)
