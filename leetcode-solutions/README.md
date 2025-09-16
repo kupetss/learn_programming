@@ -9,7 +9,7 @@
 ### Easy
 | № | Название | Решение | Темы |
 |---|----------|---------|-------|
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](easy/0001-two-sum.py) | `Array`, `Hash Table` |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](easy/1-two-sum.py) | `Array`, `Hash Table` |
 | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | [Python](easy/217-contains-duplicate.py) |  `Array`, `Hash Table`|
 | 268 | [Missing Number](https://leetcode.com/problems/missing-number/description/) |[Python](easy/268-missing-number.py) | `Array`, `Hash Table`| 
 | ... | ... | ... | ... |
