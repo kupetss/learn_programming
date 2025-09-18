@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Добро пожаловать в мой блог!</h1>
+    <h2>{{ title }}</h2> 
+
+    <hr>
+
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p><strong>Автор:</strong> {{ post.author }}</p>
+            <p><strong>Дата:</strong> {{ post.created_at }}</p>
+            <p>{{ post.content | truncatewords:20 }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
