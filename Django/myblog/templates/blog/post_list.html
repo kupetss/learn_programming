@@ -1,18 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'blog/base.html' %}
 {% block title %}{{ title }}{% endblock %}
+
 {% block content %}
+<div class="container">
     <h1>{{ title }}</h1>
+
     {% if posts %}
         {% for post in posts %}
-            <article style="margin-bottom: 2rem; padding: 1rem; border: 1px solid #ccc;">
-                <h2><a href="#" style="text-decoration: none; color: inherit;">{{ post.title }}</a></h2>
-                <p><strong>Автор:</strong> {{ post.author }} | <strong>Категория:</strong> {{ post.category.name }} | <strong>Опубликовано:</strong> {{ post.created_at | date:"d E Y, H:i" }}</p>
-                <p>{{ post.content | truncatewords:30 }}</p>
-                <a href="#">Читать далее...</a>
+            <article class="post-card">
+                <!-- Обновите эту ссылку -->
+                <h2><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h2>
+                
+                <div class="post-meta">
+                    <strong>Автор:</strong> {{ post.author }} |
+                    <strong>Категория:</strong> {{ post.category.name }} |
+                    <strong>Опубликовано:</strong> {{ post.created_at|date:"d E Y, H:i" }}
+                </div>
+                
+                <div class="post-content">
+                    <p>{{ post.content | truncatewords:30 }}</p>
+                    <!-- И эту ссылку тоже -->
+                    <a href="{% url 'blog:post_detail' post.id %}" class="read-more">Читать далее...</a>
+                </div>
             </article>
         {% endfor %}
     {% else %}
         <p>К сожалению, постов еще нет.</p>
     {% endif %}
-
+</div>
 {% endblock %}
