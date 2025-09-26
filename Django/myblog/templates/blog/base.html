@@ -1,3 +1,4 @@
+{% load static  %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,13 +7,14 @@
     <title>
         {% block title %}Мой Блог{% endblock %} 
     </title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
 </head>
 <body>
     <header>
         <nav>
             <h1>Мой Блог</h1>
             <ul style="list-style: none; padding: 0; display: flex; gap: 20px;">
-                <li><a href="{% url 'post_list' %}">Главная</a></li>
+                <li><a href="{% url 'blog:post_list' %}">Главная</a></li>
                 <li><a href="/admin/">Админка (пока тут)</a></li>
                 <li><a href="#">О сайте (скоро)</a></li>
             </ul>
@@ -30,4 +32,4 @@
         <p>&copy; Мой Блог, {% now "Y" %}</p>
     </footer>
 </body>
-</html>
+ </html>
