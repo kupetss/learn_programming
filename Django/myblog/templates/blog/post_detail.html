@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <article class="post-card">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">
+            <strong>Автор:</strong> {{ post.author }} |
+            <strong>Категория:</strong> {{ post.category.name }} |
+            <strong>Опубликовано:</strong> {{ post.published_at|date:"d E Y, H:i" }}
+        </div>
+        <div class="post-content">
+            <p>{{ post.content | linebreaks }}</p>
+        </div>
+    </article>
+    <!-- Обновите эту ссылку -->
+    <a href="{% url 'blog:post_list' %}" class="read-more">← Назад к списку постов</a>
+</div>
+{% endblock %}
