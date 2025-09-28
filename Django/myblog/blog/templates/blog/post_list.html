@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список постов</title>
+</head>
+<body>
+    <h1>Мои посты</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <small>{{ post.created_date }}</small>
+        </div>
+    {% endfor %}
+</body>
+</html>
